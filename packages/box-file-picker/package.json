@@ -25,19 +25,7 @@
     "extends": [
       "react-app"
     ],
-    "rules": {
-      "no-restricted-globals": [
-        "error",
-        {
-          "name": "window",
-          "message": "Don't use browser's `window` object."
-        },
-        {
-          "name": "document",
-          "message": "Don't use browser's `document` object."
-        }
-      ]
-    }
+    "rules": {}
   },
   "keywords": [
     "lcnc",
