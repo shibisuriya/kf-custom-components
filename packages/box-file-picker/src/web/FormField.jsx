@@ -50,7 +50,7 @@ const BoxRefernceField = (props) => {
 export const BoxReferenceAttachments = ({ files = [] }) => {
   return (
     <div className={styles.files}>
-      {files.map((file) => (
+      {(files ?? []).map((file) => (
         <a
           key={file.id}
           href={`https://app.box.com/file/${file.id}`}
@@ -92,10 +92,10 @@ export const BoxReferenceModel = ({
 
 export const BoxBody = ({ onFileSelect, updateValue }) => {
   const [accessToken, setAccessToken] = useState(
-    localStorage.getItem("clientId")
+    localStorage.getItem("clientId"),
   );
   const [clientId, setClientId] = useState(
-    localStorage.getItem("clientSecret")
+    localStorage.getItem("clientSecret"),
   );
 
   //   const onMessage = (e) => {
@@ -249,3 +249,4 @@ export const BoxWidget = ({ accessToken, onFileSelect, updateValue }) => {
 };
 
 export default BoxRefernceField;
+
