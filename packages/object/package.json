@@ -1,5 +1,5 @@
 {
-  "name": "box-file-picker",
+  "name": "object",
   "version": "1.0.0",
   "description": "Custom form field for Kissflow's form",
   "main": "index.js",
@@ -39,6 +39,7 @@
     "custom-fields"
   ],
   "dependencies": {
+    "api-inspector": "workspace:^",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

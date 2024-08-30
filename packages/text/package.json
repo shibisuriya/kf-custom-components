@@ -1,11 +1,11 @@
 {
-  "name": "box-file-picker",
+  "name": "text",
   "version": "1.0.0",
   "description": "Custom form field for Kissflow's form",
   "main": "index.js",
   "scripts": {
     "dev": "form-field-scripts dev",
-    "build": "form-field-scripts build",
+    "build": "form-field-scripts build && npm run zip",
     "zip": "cd ./dist && zip -r ../custom-form-field.zip .",
     "unzip": "rm -rf ./custom-form-field && unzip custom-form-field.zip -d ./custom-form-field"
   },
@@ -39,6 +39,7 @@
     "custom-fields"
   ],
   "dependencies": {
+    "api-inspector": "workspace:^",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

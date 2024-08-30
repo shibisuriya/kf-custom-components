@@ -1,5 +1,5 @@
 {
-  "name": "box-file-picker",
+  "name": "array-of-strings",
   "version": "1.0.0",
   "description": "Custom form field for Kissflow's form",
   "main": "index.js",

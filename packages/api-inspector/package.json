@@ -1,0 +1,38 @@
+{
+  "name": "api-inspector",
+  "version": "0.1.5",
+  "main": "./dist/main.js",
+  "license": "MIT",
+  "author": "",
+  "description": "",
+  "repository": {
+    "type": "git"
+  },
+  "homepage": "",
+  "type": "module",
+  "scripts": {
+    "postinstall": "pnpm run build",
+    "dev": "nodemon",
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.9",
+    "@babel/preset-react": "^7.22.5",
+    "@rollup/plugin-babel": "^6.0.4",
+    "nodemon": "^3.1.1",
+    "rollup": "^3.18.0"
+  },
+  "files": [
+    "./dist"
+  ],
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "keywords": [],
+  "dependencies": {
+    "antd": "^5.20.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
