@@ -1,6 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { Trans } from "@lingui/macro";
 import ApiInspector from "api-inspector";
 
 export default function ArrayOfObjectscc(props) {
@@ -41,9 +39,7 @@ export default function ArrayOfObjectscc(props) {
             })}
           </ul>
         ) : (
-          <button onClick={addObject}>
-            <Trans>Add object</Trans>
-          </button>
+          <button onClick={addObject}>Add object</button>
         )}
       </div>
       <div>

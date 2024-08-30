@@ -1,7 +1,4 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
-import PropTypes from "prop-types";
-import { Trans } from "@lingui/macro";
 import ApiInspector from "api-inspector";
 
 export default function booleone(props) {
@@ -30,9 +27,7 @@ export default function booleone(props) {
         ) : (
           <div>
             <div>
-              <label htmlFor="yes">
-                <Trans>Yes</Trans>
-              </label>
+              <label htmlFor="yes">Yes</label>
               <input
                 type="radio"
                 id="yes"
@@ -45,9 +40,7 @@ export default function booleone(props) {
               />
             </div>
             <div>
-              <label htmlFor="no">
-                <Trans>No</Trans>
-              </label>
+              <label htmlFor="no">No</label>
               <input
                 type="radio"
                 id="no"
@@ -65,17 +58,3 @@ export default function booleone(props) {
     </div>
   );
 }
-
-Boolean.propTypes = {
-  name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  isRequired: PropTypes.bool,
-  fieldId: PropTypes.string,
-  hint: PropTypes.string,
-  defaultValue: PropTypes.string,
-  events: PropTypes.shape({
-    onChange: PropTypes.func.isRequired,
-    onBlur: PropTypes.func.isRequired,
-  }).isRequired,
-  states: PropTypes.shape({}),
-};

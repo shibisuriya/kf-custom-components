@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 import React from "react";
 import { Knob } from "primereact/knob";
 import { ApiInspector } from "api-inspector";

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "form-field-scripts dev",
-    "build": "form-field-scripts build",
+    "build": "form-field-scripts build && pnpm run zip",
     "zip": "cd ./dist && zip -r ../custom-form-field.zip .",
     "unzip": "rm -rf ./custom-form-field && unzip custom-form-field.zip -d ./custom-form-field"
   },

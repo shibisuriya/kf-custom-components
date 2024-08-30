@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "form-field-scripts dev",
-    "build": "form-field-scripts build",
+    "build": "form-field-scripts build && pnpm run zip",
     "zip": "cd ./dist && zip -r ../custom-form-field.zip .",
     "unzip": "rm -rf ./custom-form-field && unzip custom-form-field.zip -d ./custom-form-field"
   },
@@ -13,8 +13,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@kissflow/form-field-scripts": "0.0.1-beta.2",
     "@kissflow/form-field-config": "0.0.1-beta.1",
+    "@kissflow/form-field-scripts": "0.0.1-beta.2",
     "unzipper": "^0.10.14",
     "zip": "^1.2.0"
   },
@@ -40,6 +40,7 @@
   ],
   "dependencies": {
     "api-inspector": "workspace:^",
+    "primereact": "^10.8.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
