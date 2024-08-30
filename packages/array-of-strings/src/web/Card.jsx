@@ -1,7 +1,15 @@
-import React from 'react'
+import React from "react";
+import Dummy from "./FormField.jsx";
 
-function Card() {
-    return <div>Card</div>
+function Card(props) {
+  return (
+    <div>
+      <h5>Card</h5>
+      <div>
+        <Dummy {...props} />
+      </div>
+    </div>
+  );
 }
 
-export default Card
+export default Card;
