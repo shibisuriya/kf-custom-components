@@ -1,5 +1,5 @@
 import React from "react";
-import ApiInspector from "api-inspector";
+import { ApiInspector } from "api-inspector";
 
 export default function ArrayOfString(props) {
   const {

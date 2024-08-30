@@ -124,4 +124,4 @@ const ApiInspector = (props) => {
   );
 };
 
-export default ApiInspector;
+export { ApiInspector };
