@@ -38,6 +38,9 @@ importers:
 
   packages/array-of-objects:
     dependencies:
+      api-inspector:
+        specifier: workspace:^
+        version: link:../api-inspector
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -60,6 +63,9 @@ importers:
 
   packages/array-of-strings:
     dependencies:
+      api-inspector:
+        specifier: workspace:^
+        version: link:../api-inspector
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -82,6 +88,9 @@ importers:
 
   packages/boolean:
     dependencies:
+      api-inspector:
+        specifier: workspace:^
+        version: link:../api-inspector
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -214,6 +223,9 @@ importers:
 
   packages/number:
     dependencies:
+      api-inspector:
+        specifier: workspace:^
+        version: link:../api-inspector
       react:
         specifier: ^18.2.0
         version: 18.2.0
