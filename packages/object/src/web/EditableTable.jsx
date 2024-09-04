@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function EditableTable() {
-    return <div>EditableTable</div>
+  return <div>EditableTablee</div>;
 }
 
-export default EditableTable
+export default EditableTable;

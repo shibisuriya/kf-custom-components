@@ -36,6 +36,7 @@ const ApiInspector = (props) => {
     errors,
     theme,
     fetchKfApi,
+    jsonSchema,
   } = props;
 
   const propsData = [
@@ -82,6 +83,7 @@ const ApiInspector = (props) => {
     { key: "errors", value: errors, type: typeof errors },
     { key: "theme", value: theme, type: typeof theme },
     { key: "fetchKfApi", value: "", type: typeof fetchKfApi },
+    { key: "jsonSchema", value: jsonSchema, type: typeof jsonSchema },
   ];
 
   return (

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { ApiInspector } from "api-inspector";
+import { ApiInspector } from "helpers";
 
 export default function Text(props) {
   const {

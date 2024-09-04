@@ -1,5 +1,5 @@
 import React from "react";
-import { ApiInspector } from "api-inspector";
+import { ApiInspector } from "helpers";
 
 export default function CustomObjectField(props) {
   const {

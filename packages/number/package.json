@@ -39,7 +39,7 @@
     "custom-fields"
   ],
   "dependencies": {
-    "api-inspector": "workspace:^",
+    "helpers": "workspace:^",
     "primereact": "^10.8.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

@@ -8,39 +8,11 @@ importers:
 
   .: {}
 
-  packages/api-inspector:
-    dependencies:
-      antd:
-        specifier: ^5.20.3
-        version: 5.20.3(react-dom@18.2.0)(react@18.2.0)
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-    devDependencies:
-      '@babel/preset-env':
-        specifier: ^7.22.9
-        version: 7.22.9(@babel/core@7.25.2)
-      '@babel/preset-react':
-        specifier: ^7.22.5
-        version: 7.22.5(@babel/core@7.25.2)
-      '@rollup/plugin-babel':
-        specifier: ^6.0.4
-        version: 6.0.4(@babel/core@7.25.2)(rollup@3.18.0)
-      nodemon:
-        specifier: ^3.1.1
-        version: 3.1.1
-      rollup:
-        specifier: ^3.18.0
-        version: 3.18.0
-
   packages/array-of-objects:
     dependencies:
-      api-inspector:
+      helpers:
         specifier: workspace:^
-        version: link:../api-inspector
+        version: link:../helpers
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -63,9 +35,9 @@ importers:
 
   packages/array-of-strings:
     dependencies:
-      api-inspector:
+      helpers:
         specifier: workspace:^
-        version: link:../api-inspector
+        version: link:../helpers
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -88,9 +60,9 @@ importers:
 
   packages/boolean:
     dependencies:
-      api-inspector:
+      helpers:
         specifier: workspace:^
-        version: link:../api-inspector
+        version: link:../helpers
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -132,6 +104,34 @@ importers:
       zip:
         specifier: ^1.2.0
         version: 1.2.0
+
+  packages/helpers:
+    dependencies:
+      antd:
+        specifier: ^5.20.3
+        version: 5.20.3(react-dom@18.2.0)(react@18.2.0)
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@babel/preset-env':
+        specifier: ^7.22.9
+        version: 7.22.9(@babel/core@7.25.2)
+      '@babel/preset-react':
+        specifier: ^7.22.5
+        version: 7.22.5(@babel/core@7.25.2)
+      '@rollup/plugin-babel':
+        specifier: ^6.0.4
+        version: 6.0.4(@babel/core@7.25.2)(rollup@3.18.0)
+      nodemon:
+        specifier: ^3.1.1
+        version: 3.1.1
+      rollup:
+        specifier: ^3.18.0
+        version: 3.18.0
 
   packages/no-web-card:
     dependencies:
@@ -223,9 +223,9 @@ importers:
 
   packages/number:
     dependencies:
-      api-inspector:
+      helpers:
         specifier: workspace:^
-        version: link:../api-inspector
+        version: link:../helpers
       primereact:
         specifier: ^10.8.2
         version: 10.8.2(react-dom@18.2.0)(react@18.2.0)
@@ -251,9 +251,9 @@ importers:
 
   packages/object:
     dependencies:
-      api-inspector:
+      helpers:
         specifier: workspace:^
-        version: link:../api-inspector
+        version: link:../helpers
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -276,9 +276,9 @@ importers:
 
   packages/text:
     dependencies:
-      api-inspector:
+      helpers:
         specifier: workspace:^
-        version: link:../api-inspector
+        version: link:../helpers
       react:
         specifier: ^18.2.0
         version: 18.2.0

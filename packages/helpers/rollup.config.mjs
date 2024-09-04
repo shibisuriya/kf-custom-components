@@ -9,6 +9,6 @@ export default {
       plugins: [{ presets: ["@babel/preset-env"] }],
     },
   ],
-  external: ["react", "react-dom", "@declarative-gridstack/core"],
+  external: ["react", "react-dom"],
   plugins: [babel({ presets: ["@babel/preset-react"] })],
 };

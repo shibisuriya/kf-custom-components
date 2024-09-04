@@ -1,5 +1,5 @@
 {
-  "name": "api-inspector",
+  "name": "helpers",
   "version": "0.1.5",
   "main": "./dist/main.js",
   "license": "MIT",
