@@ -1,4 +1,4 @@
 packages:
-  - 'packages/*'
   - 'lcnc-sdk-js/packages/*'
+  - 'packages/*'
 

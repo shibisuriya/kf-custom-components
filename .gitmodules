@@ -1,0 +1,4 @@
+[submodule "lcnc-sdk-js"]
+	path = lcnc-sdk-js
+	url = https://github.com/shibisuriya/lcnc-sdk-js.git
+	branch = feat/custom-form-field-alpha
