@@ -1,5 +1,6 @@
 import React from "react";
 import { ApiInspector } from "helpers";
+import { Tester } from "helpers";
 
 export default function CustomObjectField(props) {
   const {
@@ -21,6 +22,12 @@ export default function CustomObjectField(props) {
   return (
     <div style={{ outline: "3px solid red", backgroundColor: color }}>
       <ApiInspector {...props} />
+      <Tester
+        value={props.value}
+        updateValue={props.actions.updateValue}
+        jsonSchema={props.jsonSchema}
+        fieldType={props.field.type}
+      />
       <div>
         {readonly ? (
           JSON.stringify(value)
@@ -29,11 +36,17 @@ export default function CustomObjectField(props) {
             type="text"
             value={value?.name ?? ""}
             onChange={(e) => {
-              const value = { name: String(e.target.value) };
+              const value = {
+                name: String(e.target.value),
+                age: Number(Date.now()),
+              };
               updateValue(value);
             }}
             onBlur={(e) => {
-              const value = { name: String(e.target.value) };
+              const value = {
+                name: String(e.target.value),
+                age: Number(Date.now()),
+              };
               updateValue(value);
             }}
           />

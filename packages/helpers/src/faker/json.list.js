@@ -1,6 +1,6 @@
 import { generateFakeJson } from "./json.js";
 
-function generateFakeJsonList({ jsonSchema, length = 5 }) {
+function generateFakeJsonList({ jsonSchema }) {
   return generateFakeJson({ jsonSchema });
 }
 

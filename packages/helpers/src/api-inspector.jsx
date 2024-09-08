@@ -87,7 +87,7 @@ const ApiInspector = (props) => {
   ];
 
   return (
-    <>
+    <React.Fragment>
       <Button type="primary" onClick={showModal}>
         Inspect API
       </Button>
@@ -122,7 +122,7 @@ const ApiInspector = (props) => {
           </tbody>
         </table>
       </Modal>
-    </>
+    </React.Fragment>
   );
 };
 

@@ -7,7 +7,7 @@ import { generateFakeJsonList } from "./json.list.js";
 import { generateFakeText } from "./text.js";
 import { generateFakeStringList } from "./string.list.js";
 
-function generateFakeValue({ fieldType, jsonSchema }) {
+function generateFakeValue({ fieldType, jsonSchema, length }) {
   switch (fieldType) {
     case FIELD_TYPES.TEXT:
       return generateFakeText();
@@ -22,10 +22,10 @@ function generateFakeValue({ fieldType, jsonSchema }) {
       return generateFakeJson({ jsonSchema });
 
     case FIELD_TYPES.OBJECT_LIST:
-      return generateFakeJsonList({ jsonSchema });
+      return generateFakeJsonList({ jsonSchema, length });
 
     case FIELD_TYPES.STRING_LIST:
-      return generateFakeStringList();
+      return generateFakeStringList({ length });
 
     default:
       throw new Error(
