@@ -1,0 +1,42 @@
+{
+  "name": "boolean",
+  "version": "1.0.0",
+  "description": "Custom form field for Kissflow's form",
+  "main": "index.js",
+  "scripts": {
+    "dev": "form-field-scripts dev",
+    "build": "form-field-scripts build && pnpm run zip",
+    "zip": "cd ./dist && zip -r ../custom-form-field.zip .",
+    "unzip": "rm -rf ./custom-form-field && unzip custom-form-field.zip -d ./custom-form-field"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@kissflow/form-field-scripts": "workspace:^",
+    "@kissflow/form-field-config": "workspace:^",
+    "unzipper": "^0.10.14",
+    "zip": "^1.2.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ],
+    "rules": {}
+  },
+  "keywords": [
+    "lcnc",
+    "no-code",
+    "low-code",
+    "platform",
+    "react",
+    "cli",
+    "kissflow",
+    "custom-components",
+    "custom-fields"
+  ],
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
