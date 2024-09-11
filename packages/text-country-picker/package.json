@@ -1,12 +1,12 @@
 {
-  "name": "boolean",
+  "name": "text",
   "version": "1.0.0",
   "description": "Custom form field for Kissflow's form",
   "main": "index.js",
   "scripts": {
     "dev": "form-field-scripts dev",
-    "build": "form-field-scripts build",
-    "zip": "rm -rf ./custom-form-field.zip ./dist && npm run build && cd ./dist && zip -q -r ../custom-form-field.zip . && rm -rf ../dist",
+    "build": "form-field-scripts build && npm run zip",
+    "zip": "cd ./dist && zip -r ../custom-form-field.zip .",
     "unzip": "rm -rf ./custom-form-field && unzip custom-form-field.zip -d ./custom-form-field"
   },
   "type": "module",
