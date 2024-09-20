@@ -1,42 +1,43 @@
 {
-  "name": "no-web-card",
-  "version": "1.0.0",
-  "description": "Custom form field for Kissflow's form",
-  "main": "index.js",
-  "scripts": {
-    "dev": "form-field-scripts dev",
-    "build": "form-field-scripts build",
-    "zip": "rm -rf ./custom-form-field.zip ./dist && npm run build && cd ./dist && zip -q -r ../custom-form-field.zip . && rm -rf ../dist",
-    "unzip": "rm -rf ./custom-form-field && unzip custom-form-field.zip -d ./custom-form-field"
-  },
-  "type": "module",
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@kissflow/form-field-scripts": "workspace:^",
-    "@kissflow/form-field-config": "workspace:^",
-    "unzipper": "^0.10.14",
-    "zip": "^1.2.0"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
+    "name": "no-web-card",
+    "version": "1.0.0",
+    "description": "Custom form field for Kissflow's form",
+    "main": "index.js",
+    "scripts": {
+        "dev": "form-field-scripts dev",
+        "build": "form-field-scripts build",
+        "zip": "rm -rf ./custom-form-field.zip ./dist && npm run build && cd ./dist && zip -q -r ../custom-form-field.zip . && rm -rf ../dist",
+        "unzip": "rm -rf ./custom-form-field && unzip custom-form-field.zip -d ./custom-form-field"
+    },
+    "type": "module",
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@kissflow/form-field-scripts": "workspace:^",
+        "@kissflow/form-field-config": "workspace:^",
+        "unzipper": "^0.10.14",
+        "zip": "^1.2.0"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app"
+        ],
+        "rules": {}
+    },
+    "keywords": [
+        "lcnc",
+        "no-code",
+        "low-code",
+        "platform",
+        "react",
+        "cli",
+        "kissflow",
+        "custom-components",
+        "custom-fields"
     ],
-    "rules": {}
-  },
-  "keywords": [
-    "lcnc",
-    "no-code",
-    "low-code",
-    "platform",
-    "react",
-    "cli",
-    "kissflow",
-    "custom-components",
-    "custom-fields"
-  ],
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  }
+    "dependencies": {
+        "helpers": "workspace:^",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    }
 }
