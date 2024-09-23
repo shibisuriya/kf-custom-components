@@ -12,9 +12,10 @@ window.onload = async function () {
     })
     window.kf = kf
     kf.context.watchParams(function (data) {
-		console.log("watch params data", data);
-		document.getElementById("output2").innerText = JSON.stringify(data);
-	});
+        console.log('watch params data', data)
+        document.getElementById('inputParameters').innerText =
+            JSON.stringify(data)
+    })
 
     // This is a default placeholder component, to remove it comment this method call.
     defaultLandingComponent()
