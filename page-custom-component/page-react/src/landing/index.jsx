@@ -2,12 +2,20 @@ import { kf } from './../sdk/index.js'
 import kflogo from './../assets/kf.logo.png'
 
 import styles from './styles.module.css'
+import { useEffect, useState } from 'react'
 
 const handleClick = () => {
     kf.client.showInfo(`Hi ${kf.user.Name}!`)
 }
 
 export function DefaultLandingComponent() {
+    const [paramaters,setParameters] = useState("")
+    useEffect(
+    () => { kf.context.watchParams(function (data) {
+		console.log("watch params data", data);
+		setParameters(JSON.stringify(data));
+	}, []);}
+    )
     return (
         <div className={styles.landingHero}>
             <div className={styles.mainDiv}>
@@ -30,6 +38,8 @@ export function DefaultLandingComponent() {
                     </p>
                 </div>
                 <button onClick={handleClick}>Click me</button>
+                <div>{paramaters}
+                </div>
                 <img src={kflogo} width={'120px'} className={styles.logo}></img>
             </div>
         </div>
