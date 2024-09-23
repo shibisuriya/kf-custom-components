@@ -117,7 +117,6 @@ importers:
         specifier: ^2.9.8
         version: 2.9.18
 
-  packages/aoo-multiple-text-fields:
     dependencies:
       helpers:
         specifier: workspace:^
@@ -462,31 +461,6 @@ importers:
         version: 1.2.0
 
   packages/object:
-    dependencies:
-      helpers:
-        specifier: workspace:^
-        version: link:../helpers
-      react:
-        specifier: ^18.2.0
-        version: 18.3.1
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.3.1(react@18.3.1)
-    devDependencies:
-      '@kissflow/form-field-config':
-        specifier: workspace:^
-        version: link:../../lcnc-sdk-js/packages/form-field-config
-      '@kissflow/form-field-scripts':
-        specifier: workspace:^
-        version: link:../../lcnc-sdk-js/packages/form-field-scripts
-      unzipper:
-        specifier: ^0.10.14
-        version: 0.10.14
-      zip:
-        specifier: ^1.2.0
-        version: 1.2.0
-
-  packages/object-address-collector:
     dependencies:
       helpers:
         specifier: workspace:^
