@@ -486,34 +486,6 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
 
-  packages/prime-start-rating:
-    dependencies:
-      helpers:
-        specifier: workspace:^
-        version: link:../helpers
-      primereact:
-        specifier: ^10.8.2
-        version: 10.8.3(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react:
-        specifier: ^18.2.0
-        version: 18.3.1
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.3.1(react@18.3.1)
-    devDependencies:
-      '@kissflow/form-field-config':
-        specifier: workspace:^
-        version: link:../../lcnc-sdk-js/packages/form-field-config
-      '@kissflow/form-field-scripts':
-        specifier: workspace:^
-        version: link:../../lcnc-sdk-js/packages/form-field-scripts
-      unzipper:
-        specifier: ^0.10.14
-        version: 0.10.14
-      zip:
-        specifier: ^1.2.0
-        version: 1.2.0
-
   packages/text:
     dependencies:
       helpers:
@@ -567,8 +539,8 @@ importers:
   page-custom-component/page-react:
     dependencies:
       '@kissflow/lowcode-client-sdk':
-        specifier: latest
-        version: 1.0.28
+        specifier: workspace:^
+        version: link:../../lcnc-sdk-js/packages/sdk
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -606,6 +578,9 @@ importers:
 
   page-custom-component/page-vanilla:
     devDependencies:
+      '@kissflow/lowcode-client-sdk':
+        specifier: workspace:^
+        version: link:../../lcnc-sdk-js/packages/sdk
       bestzip:
         specifier: ^2.2.1
         version: 2.2.1
@@ -1579,9 +1554,6 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
-
-  '@kissflow/lowcode-client-sdk@1.0.28':
-    resolution: {integrity: sha512-aM57cEJklgsBovBosxTXb2m8VkgRGY4AzIq7szt4SqDLMacOwRFOieJfU6Re9lMpzk9SeR6uasjSAh2HitTQ6A==}
 
   '@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1':
     resolution: {integrity: sha512-54/JRvkLIzzDWshCWfuhadfrfZVPiElY8Fcgmg1HroEly/EDSszzhBAsarCux+D/kOslTRquNzuyGSmUSTTHGg==}
@@ -6151,10 +6123,6 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
-
-  '@kissflow/lowcode-client-sdk@1.0.28':
-    dependencies:
-      nanoid: 3.3.7
 
   '@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1':
     dependencies:
