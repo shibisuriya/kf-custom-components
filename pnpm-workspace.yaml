@@ -1,4 +1,5 @@
 packages:
   - 'lcnc-sdk-js/packages/*'
   - 'packages/*'
+  - 'page-custom-component/*'
 
