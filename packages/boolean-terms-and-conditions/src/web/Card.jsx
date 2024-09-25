@@ -1,7 +1,13 @@
-import React from 'react'
+import React from "react";
 
-function Card() {
-    return <div>Card</div>
+import FormField from "./FormField.jsx";
+
+function Card(props) {
+  return (
+    <div>
+      <FormField {...props} />
+    </div>
+  );
 }
 
-export default Card
+export default Card;
