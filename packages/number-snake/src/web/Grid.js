@@ -19,11 +19,23 @@ import { cloneDeep } from 'lodash'
 
 class Grid {
     constructor() {
+        this.setupGame()
+    }
+
+    setupGame() {
         this.gameState = GAME_STATES.PAUSED // Game starts with paused game state.
         this.createTracks()
         this.initializeSnakes()
         this.initializeFood()
         this.attachKeyboard()
+    }
+
+    restartGame() {
+        try {
+            this.endGame()
+        } catch (err) {}
+        this.setupGame()
+        this.startGame()
     }
 
     startGame() {
@@ -230,7 +242,7 @@ class Grid {
     }
 
     initializeFood() {
-        this.food = initialFoodState
+        this.food = cloneDeep(initialFoodState)
     }
 
     removeSnakeFromGrid(snakeId) {
@@ -565,11 +577,11 @@ class Grid {
     }
 
     onDestroy() {
+        this.food = {}
+        this.snakes = {}
         this.detachKeyboard()
         this.detachTickers()
     }
 }
 
-const grid = new Grid()
-
-export { grid }
+export { Grid }

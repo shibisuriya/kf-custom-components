@@ -5,9 +5,7 @@ import { stringToBoolean } from './utils.js'
 import { Switch } from 'antd'
 
 function App() {
-    const [gameState, setGameState] = useState(
-        stringToBoolean(localStorage.getItem('gameState') ?? true)
-    )
+    const [gameState, setGameState] = useState(true)
     const [showCellId, setShowCellId] = useState(
         stringToBoolean(localStorage.getItem('showCellId')) ?? false
     )
@@ -35,7 +33,6 @@ function App() {
         } else {
             gameRef.current.pauseGame()
         }
-        localStorage.setItem('gameState', value)
         setGameState(value)
     }
 
@@ -100,8 +97,8 @@ function App() {
                 style={{
                     display: 'flex',
                     justifyContent: 'center',
-                    height: '100vh',
                     alignItems: 'center',
+                    padding: '10px',
                 }}
             >
                 <Game

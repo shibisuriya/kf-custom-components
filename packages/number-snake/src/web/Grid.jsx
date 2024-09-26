@@ -8,7 +8,14 @@ import {
 } from './constants.js'
 import animation from './animations.module.css'
 
-function Grid({ view, annotations, showCellId, isGameOver }) {
+function Grid({
+    view,
+    annotations,
+    showCellId,
+    isGameOver,
+    setIsGameOver,
+    grid,
+}) {
     return (
         <div
             className={styles.grid}
@@ -55,7 +62,30 @@ function Grid({ view, annotations, showCellId, isGameOver }) {
             })}
 
             {isGameOver && (
-                <div className={styles['game-over-banner']}>Game Over</div>
+                <div
+                    className={styles['game-over-banner']}
+                    style={{ fontSize: `${CELL_DIMENSION + 10}px` }}
+                >
+                    <div>Game Over</div>
+                    <div
+                        style={{
+                            fontSize: `${CELL_DIMENSION + 5}px`,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            color: 'green',
+                        }}
+                    >
+                        <button
+                            onClick={() => {
+                                grid.restartGame()
+                                setIsGameOver(false)
+                            }}
+                        >
+                            Restart?
+                        </button>
+                    </div>
+                </div>
             )}
         </div>
     )

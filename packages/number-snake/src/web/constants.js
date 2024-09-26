@@ -1,9 +1,9 @@
 import { areValuesUnique } from './utils.js'
 
 // in px (pixels)
-const GRID_WIDTH = 10 * 25
-const GRID_HEIGHT = 10 * 25
-const CELL_DIMENSION = 10
+const GRID_WIDTH = 15 * 25
+const GRID_HEIGHT = 15 * 25
+const CELL_DIMENSION = 15
 
 const GAME_STATES = {
     PAUSED: 'paused',
@@ -44,7 +44,7 @@ const SNAKE_TICKS = {
 const FOOD_TICKS = {
     ONE_TENTH: {
         TYPE: 'HALF',
-        DURATION: 1000 * 0.5,
+        DURATION: 3 * 1000,
     },
 }
 
