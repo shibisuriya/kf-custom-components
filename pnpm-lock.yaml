@@ -486,6 +486,40 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
 
+  packages/number-snake:
+    dependencies:
+      antd:
+        specifier: ^5.20.3
+        version: 5.21.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      helpers:
+        specifier: workspace:^
+        version: link:../helpers
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
+      primereact:
+        specifier: ^10.8.2
+        version: 10.8.3(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@kissflow/form-field-config':
+        specifier: workspace:^
+        version: link:../../lcnc-sdk-js/packages/form-field-config
+      '@kissflow/form-field-scripts':
+        specifier: workspace:^
+        version: link:../../lcnc-sdk-js/packages/form-field-scripts
+      unzipper:
+        specifier: ^0.10.14
+        version: 0.10.14
+      zip:
+        specifier: ^1.2.0
+        version: 1.2.0
+
   packages/object:
     dependencies:
       helpers:
