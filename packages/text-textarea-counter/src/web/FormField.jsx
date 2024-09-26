@@ -2,16 +2,18 @@ import React, { useState } from "react";
 
 export default function TextareaCounterWidget(props) {
   const {
-    field,      // Field configurations like label, required flag, placeholder
-    actions,    // Actions like updateValue
-    value,      // Current value of the textarea
-    readonly,   // If the field is in read-only mode
-    disabled,   // If the field is disabled
-    errors,     // Validation errors if any
-    theme,      // Theme for styling
-    color,      // Color for customization (optional)
-    maxLength,  // Maximum allowed characters
+    field, // Field configurations like label, required flag, placeholder
+    actions, // Actions like updateValue
+    value, // Current value of the textarea
+    readonly, // If the field is in read-only mode
+    disabled, // If the field is disabled
+    errors, // Validation errors if any
+    theme, // Theme for styling
+    color, // Color for customization (optional)
+    parameters,
   } = props;
+
+  const maxLength = props?.parameters?.max_length?.value ?? 10;
 
   const [text, setText] = useState(value || "");
   const { updateValue } = actions; // Action to update the form value
@@ -19,6 +21,8 @@ export default function TextareaCounterWidget(props) {
   const handleTextChange = (e) => {
     const input = e.target.value;
     // Ensure the input doesn't exceed the maximum length
+    //
+
     if (input.length <= maxLength) {
       setText(input);
       updateValue(input); // Update the form value
@@ -32,6 +36,7 @@ export default function TextareaCounterWidget(props) {
         backgroundColor: color || "#f8f8f8",
         padding: "10px",
         borderRadius: "5px",
+        width: "100%",
       }}
     >
       <h3>{field.label || "Enter Your Text"}</h3>
@@ -61,7 +66,8 @@ export default function TextareaCounterWidget(props) {
       ) : (
         <p>{text || "No text entered"}</p>
       )}
-      {errors && <p style={{ color: "red" }}>{errors}</p>} {/* Display validation errors */}
+      {errors && <p style={{ color: "red" }}>{errors}</p>}{" "}
+      {/* Display validation errors */}
     </div>
   );
 }

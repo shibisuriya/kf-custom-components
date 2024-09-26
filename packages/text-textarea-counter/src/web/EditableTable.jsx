@@ -2,11 +2,15 @@ import React from "react";
 import FormField from "./FormField.jsx";
 
 function EditableTable(props) {
-  return (
-    <div>
-      <FormField {...props} />
-    </div>
-  );
+  const focused = props?.cell?.focused;
+  if (focused) {
+    return (
+      <div>
+        <FormField {...props} />
+      </div>
+    );
+  }
+  return <div>{props?.value}</div>;
 }
 
 export default EditableTable;

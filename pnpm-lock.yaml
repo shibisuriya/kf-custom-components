@@ -117,6 +117,32 @@ importers:
         specifier: ^2.9.8
         version: 2.9.18
 
+  packages/all:
+    dependencies:
+      helpers:
+        specifier: workspace:^
+        version: link:../helpers
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@kissflow/form-field-config':
+        specifier: workspace:^
+        version: link:../../lcnc-sdk-js/packages/form-field-config
+      '@kissflow/form-field-scripts':
+        specifier: workspace:^
+        version: link:../../lcnc-sdk-js/packages/form-field-scripts
+      unzipper:
+        specifier: ^0.10.14
+        version: 0.10.14
+      zip:
+        specifier: ^1.2.0
+        version: 1.2.0
+
+  packages/aoo-multiple-address-collector:
     dependencies:
       helpers:
         specifier: workspace:^
@@ -485,6 +511,31 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
 
+  packages/object-address-collector:
+    dependencies:
+      helpers:
+        specifier: workspace:^
+        version: link:../helpers
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@kissflow/form-field-config':
+        specifier: workspace:^
+        version: link:../../lcnc-sdk-js/packages/form-field-config
+      '@kissflow/form-field-scripts':
+        specifier: workspace:^
+        version: link:../../lcnc-sdk-js/packages/form-field-scripts
+      unzipper:
+        specifier: ^0.10.14
+        version: 0.10.14
+      zip:
+        specifier: ^1.2.0
+        version: 1.2.0
+
   packages/text:
     dependencies:
       helpers:
@@ -511,6 +562,31 @@ importers:
         version: 1.2.0
 
   packages/text-country-picker:
+    dependencies:
+      helpers:
+        specifier: workspace:^
+        version: link:../helpers
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@kissflow/form-field-config':
+        specifier: workspace:^
+        version: link:../../lcnc-sdk-js/packages/form-field-config
+      '@kissflow/form-field-scripts':
+        specifier: workspace:^
+        version: link:../../lcnc-sdk-js/packages/form-field-scripts
+      unzipper:
+        specifier: ^0.10.14
+        version: 0.10.14
+      zip:
+        specifier: ^1.2.0
+        version: 1.2.0
+
+  packages/text-textarea-counter:
     dependencies:
       helpers:
         specifier: workspace:^
@@ -577,9 +653,6 @@ importers:
 
   page-custom-component/page-vanilla:
     devDependencies:
-      '@kissflow/lowcode-client-sdk':
-        specifier: workspace:^
-        version: link:../../lcnc-sdk-js/packages/sdk
       bestzip:
         specifier: ^2.2.1
         version: 2.2.1
