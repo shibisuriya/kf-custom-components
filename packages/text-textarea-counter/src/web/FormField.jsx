@@ -15,7 +15,6 @@ export default function TextareaCounterWidget(props) {
 
   const maxLength = props?.parameters?.max_length?.value ?? 10;
 
-  const [text, setText] = useState(value || "");
   const { updateValue } = actions; // Action to update the form value
 
   const handleTextChange = (e) => {
@@ -24,7 +23,6 @@ export default function TextareaCounterWidget(props) {
     //
 
     if (input.length <= maxLength) {
-      setText(input);
       updateValue(input); // Update the form value
     }
   };
@@ -43,7 +41,7 @@ export default function TextareaCounterWidget(props) {
       {!readonly ? (
         <div>
           <textarea
-            value={text}
+            value={props?.value}
             onChange={handleTextChange}
             disabled={disabled}
             maxLength={maxLength}
@@ -60,11 +58,11 @@ export default function TextareaCounterWidget(props) {
             }}
           />
           <div style={{ textAlign: "right", marginTop: "5px", color: "#888" }}>
-            {text.length}/{maxLength} characters
+            {value.length}/{maxLength} characters
           </div>
         </div>
       ) : (
-        <p>{text || "No text entered"}</p>
+        <p>{value || "No text entered"}</p>
       )}
       {errors && <p style={{ color: "red" }}>{errors}</p>}{" "}
       {/* Display validation errors */}
