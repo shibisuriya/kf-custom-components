@@ -37,7 +37,10 @@ export default function TextareaCounterWidget(props) {
         width: "100%",
       }}
     >
-      <h3>{field.label || "Enter Your Text"}</h3>
+      <h3>
+        {field.label || "Enter Your Text"}{" "}
+        {field?.isRequired && <span style={{ color: "red" }}>*</span>}
+      </h3>
       {!readonly ? (
         <div>
           <textarea
