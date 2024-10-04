@@ -19,8 +19,12 @@ export default function KnobCanvasWidget(props) {
 
   const handleKnobDrag = (event) => {
     const newValue = parseInt(event.target.value, 10);
-    updateValue(newValue);
+    updateValue(formatNumber(newValue,field.decimalPoints));
   };
+
+  function formatNumber(num, decimalPlaces) {
+    return Number(num.toFixed(decimalPlaces));
+  }
 
   return (
     <div style={{ outline: "3px solid purple", backgroundColor: color || '#f9f9f9' }}>
@@ -31,9 +35,9 @@ export default function KnobCanvasWidget(props) {
             min={field.min || 0}
             max={field.max || 100}
             step={field.step || 1}
-            value={value}
+            value={value??field.defaultValue}
             onChange={handleKnobDrag}
-            disabled={disabled}
+            disabled={readonly}
             style={{
               width: "100%",
               appearance: "none",
@@ -46,11 +50,10 @@ export default function KnobCanvasWidget(props) {
           <div>
             <span>{value}</span>
           </div>
+          <div>
+            <span>{field.hint}</span>
+          </div>
         </div>
-        <div>
-          <p>{value}</p>
-        </div>
-
       {errors && <p style={{ color: 'red' }}>{errors}</p>}
     </div>
   );
