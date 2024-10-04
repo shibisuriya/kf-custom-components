@@ -58,7 +58,7 @@ export default function TextareaCounterWidget(props) {
             }}
           />
           <div style={{ textAlign: "right", marginTop: "5px", color: "#888" }}>
-            {value.length}/{maxLength} characters
+            {value?.length}/{maxLength} characters
           </div>
         </div>
       ) : (

@@ -5,7 +5,7 @@ import FormField from "./FormField.jsx";
 function EditableTable(props) {
   const { focused } = props?.cell;
   if (!focused) {
-    return <div>{String(props?.value)}</div>;
+    return <div>{props?.value? 'Accepted': "Not Accepted"}</div>;
   }
 
   return (
