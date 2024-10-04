@@ -1,7 +1,8 @@
-import React from 'react'
+import React from "react";
+import FormFieldWeb from "../web/FormField.jsx";
 
-function ReadonlyTable() {
-    return <div>ReadonlyTable</div>
+function ReadonlyTable(props) {
+  return <FormFieldWeb {...props} />;
 }
 
-export default ReadonlyTable
+export default ReadonlyTable;

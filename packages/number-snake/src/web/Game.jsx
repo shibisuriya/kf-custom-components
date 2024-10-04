@@ -18,14 +18,18 @@ const Game = forwardRef((props, ref) => {
 
     const [isGameOver, setIsGameOver] = useState(false)
 
+    const onSnakeGrow = useCallback(() => {
+        console.log('I have been triggered')
+    }, [])
+
     const viewUpdater = (cells) => {
         setView(cells)
+        grid.onSnakeGrow = onSnakeGrow
     }
 
     const annotationsUpdater = (cells) => {
         setAnnotations(cells)
     }
-
 
     useEffect(() => {
         // This callback is used to update data from the

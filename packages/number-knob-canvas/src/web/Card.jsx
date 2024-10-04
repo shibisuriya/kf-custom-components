@@ -5,4 +5,4 @@ function Card(props) {
     return <FormField {...props} />;
 }
 
-export default Card
+export default Card;

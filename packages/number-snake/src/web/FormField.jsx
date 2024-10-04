@@ -4,7 +4,7 @@ import { Divider, Space, Checkbox, Flex, Select, Button } from 'antd'
 import { stringToBoolean } from './utils.js'
 import { Switch } from 'antd'
 
-function App() {
+function App(props) {
     const [gameState, setGameState] = useState(true)
     const [showCellId, setShowCellId] = useState(
         stringToBoolean(localStorage.getItem('showCellId')) ?? false
@@ -102,6 +102,8 @@ function App() {
                 }}
             >
                 <Game
+                    value={props.value}
+                    updateValue={props.actions.updateValue}
                     ref={gameRef}
                     showCellId={showCellId}
                     gameState={gameState}
