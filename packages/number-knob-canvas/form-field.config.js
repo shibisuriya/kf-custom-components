@@ -7,10 +7,10 @@ const formFieldConfig = {
     [FORM_FIELD_COMPONENTS.READONLY_TABLE]: "./src/web/ReadonlyTable.jsx",
     [FORM_FIELD_COMPONENTS.CARD]: "./src/web/Card.jsx",
   },
-  //[PLATFORMS.PWA]: {
-  //  [FORM_FIELD_COMPONENTS.FORM_FIELD]: "./src/pwa/FormField.jsx",
-  //  [FORM_FIELD_COMPONENTS.READONLY_TABLE]: "./src/pwa/ReadonlyTable.jsx",
-  //},
+  [PLATFORMS.PWA]: {
+    [FORM_FIELD_COMPONENTS.FORM_FIELD]: "./src/pwa/FormField.jsx",
+    [FORM_FIELD_COMPONENTS.READONLY_TABLE]: "./src/pwa/ReadonlyTable.jsx",
+  },
 };
 
 export default formFieldConfig;

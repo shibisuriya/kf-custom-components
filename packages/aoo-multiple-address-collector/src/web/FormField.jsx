@@ -29,11 +29,14 @@ const AddressManager = (props) => {
         setAddresses(newAddresses)
     }
 
+    const { readonly } = props
+
     return (
         <div>
             {addresses.map((address, index) => (
                 <div key={index} className="address">
                     <input
+                        disabled={readonly}
                         type="text"
                         name="street"
                         value={address.street}
@@ -41,6 +44,7 @@ const AddressManager = (props) => {
                         placeholder="Street"
                     />
                     <input
+                        disabled={readonly}
                         type="text"
                         name="city"
                         value={address.city}
@@ -48,6 +52,7 @@ const AddressManager = (props) => {
                         placeholder="City"
                     />
                     <input
+                        disabled={readonly}
                         type="text"
                         name="state"
                         value={address.state}
@@ -55,13 +60,18 @@ const AddressManager = (props) => {
                         placeholder="State"
                     />
                     <input
+                        disabled={readonly}
                         type="text"
                         name="zip"
                         value={address.zip}
                         onChange={(e) => handleChange(index, e)}
                         placeholder="Zip Code"
                     />
-                    <button type="button" onClick={() => removeAddress(index)}>
+                    <button
+                        disabled={readonly}
+                        type="button"
+                        onClick={() => removeAddress(index)}
+                    >
                         Remove Address
                     </button>
                 </div>

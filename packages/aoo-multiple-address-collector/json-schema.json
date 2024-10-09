@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string"
+            },
+            "age": {
+                "type": "integer"
+            },
+            "department": {
+                "type": "string"
+            },
+            "street": {
+                "type": "string"
+            },
+            "city": {
+                "type": "string"
+            },
+            "state": {
+                "type": "string"
+            },
+            "zip": {
+                "type": "string"
+            }
+        },
+        "required": ["name", "age", "department"],
+        "additionalProperties": false
+    }
+}
