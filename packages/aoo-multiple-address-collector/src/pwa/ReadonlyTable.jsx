@@ -1,7 +1,8 @@
 import React from 'react'
+import FormField from '../web/FormField.jsx'
 
-function ReadonlyTable() {
-    return <div>ReadonlyTable</div>
+function PwaReadonlyTable(props) {
+    return <FormField {...props} />
 }
 
-export default ReadonlyTable
+export default PwaReadonlyTable
