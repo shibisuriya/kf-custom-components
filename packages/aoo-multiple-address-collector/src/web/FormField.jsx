@@ -4,11 +4,11 @@ import styles from './styles.css'
 const AddressManager = (props) => {
     // Initial state with one empty address
     const [addresses, setAddresses] = useState(
-        props.value || [{ street: '', city: '', state: '', zip: '' }]
+        props.value ?? []
     )
 
     useEffect(() => {
-        setAddresses(props.value)
+        setAddresses(props.value ?? [])
     }, [props.value])
 
     // Handler to update an address field
@@ -124,6 +124,7 @@ const AddressManager = (props) => {
                         </button>
                     </div>
                 )}
+                {props.errors && <p style={{ color: "red" }}>{props.errors}</p>}
             </div>
         )
     }
