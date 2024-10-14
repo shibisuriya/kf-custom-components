@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './styles.css'
 
 const AddressManager = (props) => {
@@ -6,6 +6,10 @@ const AddressManager = (props) => {
     const [addresses, setAddresses] = useState(
         props.value || [{ street: '', city: '', state: '', zip: '' }]
     )
+
+    useEffect(() => {
+        setAddresses(props.value)
+    }, [props.value])
 
     // Handler to update an address field
     const handleChange = (index, e) => {
@@ -28,6 +32,7 @@ const AddressManager = (props) => {
     const removeAddress = (index) => {
         const newAddresses = addresses.filter((_, i) => i !== index)
         setAddresses(newAddresses)
+        props.actions.updateValue(newAddresses)
     }
 
     const { readonly } = props
@@ -36,16 +41,18 @@ const AddressManager = (props) => {
         return (
             <div>
                 <div>No address found!</div>
-                {!readonly && <div>
-                    <button
-                        className={styles.input}
-                        type="button"
-                        disabled={readonly}
-                        onClick={addAddress}
-                    >
-                        +
-                    </button>
-                </div>}
+                {!readonly && (
+                    <div>
+                        <button
+                            className={styles.input}
+                            type="button"
+                            disabled={readonly}
+                            onClick={addAddress}
+                        >
+                            +
+                        </button>
+                    </div>
+                )}
             </div>
         )
     } else {

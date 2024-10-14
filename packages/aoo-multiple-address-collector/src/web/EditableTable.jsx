@@ -8,7 +8,7 @@ function EditableTable(props) {
         return <FormField {...props} />
     }
 
-    return <div>{JSON.stringify(props.value)}</div>
+    return <FormField {...props} readonly={true} />
 }
 
 export default EditableTable
