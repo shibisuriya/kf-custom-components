@@ -4,15 +4,6 @@
     "items": {
         "type": "object",
         "properties": {
-            "name": {
-                "type": "string"
-            },
-            "age": {
-                "type": "integer"
-            },
-            "department": {
-                "type": "string"
-            },
             "street": {
                 "type": "string"
             },
@@ -26,7 +17,7 @@
                 "type": "string"
             }
         },
-        "required": ["name", "age", "department"],
+        "required": ["street", "city", "state"],
         "additionalProperties": false
     }
 }

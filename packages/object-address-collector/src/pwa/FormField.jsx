@@ -1,7 +1,8 @@
 import React from 'react'
+import FormField from '../web/FormField.jsx'
 
-function FormField() {
-    return <div>FormField</div>
+function PwaFormField(props) {
+    return <FormField {...props} />
 }
 
-export default FormField
+export default PwaFormField

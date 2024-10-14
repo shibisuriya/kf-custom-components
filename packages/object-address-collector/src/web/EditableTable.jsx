@@ -1,7 +1,8 @@
-import React from "react";
+import React from 'react'
+import FormField from './FormField.jsx'
 
-function EditableTable() {
-  return <div>EditableTablee</div>;
+function EditableTable(props) {
+    return <FormField {...props} />
 }
 
-export default EditableTable;
+export default EditableTable
