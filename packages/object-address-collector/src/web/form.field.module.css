@@ -1,0 +1,30 @@
+.formControls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.field {
+    padding: 1.5rem;
+}
+
+.fieldTitle {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.key {
+    color: blue;
+    width: 40%;
+}
+
+.value {
+    color: green;
+    width: 60%;
+}
+
+.formControlInReadOnlyMode {
+    display: flex;
+    gap: 1rem;
+}

@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import styles from './form.field.module.css'
 
 export default function AddressFieldWidget(props) {
     const {
@@ -16,11 +17,15 @@ export default function AddressFieldWidget(props) {
         street: '',
         city: '',
         state: '',
-        postalCode: '',
+        postalCode: 0,
         country: '',
     }
 
     const [address, setAddress] = useState(value || defaultAddress)
+
+    useEffect(() => {
+        setAddress({ ...(props.value || defaultAddress) })
+    }, [props.value])
 
     const { updateValue } = actions
 
@@ -30,20 +35,15 @@ export default function AddressFieldWidget(props) {
         updateValue(updatedAddress) // Update form value
     }
 
-    return (
-        <div
-            style={{
-                outline: '3px solid blue',
-                backgroundColor: color || '#f8f8f8',
-            }}
-        >
-            <h3>{field.label || 'Address'}</h3>
-
-            {!readonly ? (
-                <div>
-                    <div style={{ marginBottom: '10px' }}>
-                        <label>Street: </label>
+    if (!readonly) {
+        return (
+            <div className={styles.field}>
+                <div className={styles.formControls}>
+                    <div className={styles.fieldTitle}>ADDRESS</div>
+                    <div>
+                        <div className={styles.label}>Street: </div>
                         <input
+                            className={styles.input}
                             type="text"
                             value={address.street}
                             onChange={(e) =>
@@ -55,9 +55,10 @@ export default function AddressFieldWidget(props) {
                             }
                         />
                     </div>
-                    <div style={{ marginBottom: '10px' }}>
-                        <label>City: </label>
+                    <div>
+                        <div className={styles.label}>City: </div>
                         <input
+                            className={styles.input}
                             type="text"
                             value={address.city}
                             onChange={(e) =>
@@ -66,8 +67,11 @@ export default function AddressFieldWidget(props) {
                             disabled={disabled}
                             placeholder={field.placeholder?.city || 'City'}
                         />
-                        <label>State: </label>
+                    </div>
+                    <div>
+                        <div className={styles.label}>State: </div>
                         <input
+                            className={styles.input}
                             type="text"
                             value={address.state}
                             onChange={(e) =>
@@ -79,21 +83,25 @@ export default function AddressFieldWidget(props) {
                             }
                         />
                     </div>
-                    <div style={{ marginBottom: '10px' }}>
-                        <label>Postal code: </label>
+                    <div>
+                        <div>Postal code: </div>
                         <input
                             type="number"
                             value={address.postalCode}
                             onChange={(e) =>
-                                handleInputChange('postalCode', e.target.value)
+                                handleInputChange(
+                                    'postalCode',
+                                    Number(e.target.value)
+                                )
                             }
                             disabled={disabled}
                             placeholder={
-                                field.placeholder?.postalCode ||
-                                'Postal/postalCode Code'
+                                field.placeholder?.postalCode || 'Postal code'
                             }
                         />
-                        <label>Country: </label>
+                    </div>
+                    <div>
+                        <div>Country: </div>
                         <input
                             type="text"
                             value={address.country}
@@ -107,18 +115,40 @@ export default function AddressFieldWidget(props) {
                         />
                     </div>
                 </div>
-            ) : (
-                <div>
-                    <p>Street: {address.street}</p>
-                    <p>
-                        city: {address.city}, state: {address.state}, postal
-                        code : {address.postalCode}
-                    </p>
-                    <p>{address.country}</p>
-                </div>
-            )}
+                <div>{errors && <p style={{ color: 'red' }}>{errors}</p>}</div>
+            </div>
+        )
+    }
 
-            {errors && <p style={{ color: 'red' }}>{errors}</p>}
+    return (
+        <div className={styles.field}>
+            <div>
+                <div className={styles.formControlInReadOnlyMode}>
+                    <div className={styles.key}>Street:</div>
+                    <div className={styles.value}>{address.street}</div>
+                </div>
+
+                <div className={styles.formControlInReadOnlyMode}>
+                    <div className={styles.key}>City:</div>
+                    <div className={styles.value}>{address.city}</div>
+                </div>
+
+                <div className={styles.formControlInReadOnlyMode}>
+                    <div className={styles.key}>State:</div>
+                    <div className={styles.value}>{address.state}</div>
+                </div>
+
+                <div className={styles.formControlInReadOnlyMode}>
+                    <div className={styles.key}>Zip code:</div>{' '}
+                    <div className={styles.value}>{address.postalCode}</div>
+                </div>
+
+                <div className={styles.formControlInReadOnlyMode}>
+                    <div className={styles.key}>Country:</div>{' '}
+                    <div className={styles.value}>{address.country}</div>
+                </div>
+            </div>
+            {errors && <div style={{ color: 'red' }}>{errors}</div>}
         </div>
     )
 }
