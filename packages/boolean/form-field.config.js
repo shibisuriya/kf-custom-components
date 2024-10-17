@@ -9,7 +9,6 @@ export default {
     },
     [PLATFORMS.PWA]: {
         [FORM_FIELD_COMPONENTS.FORM_FIELD]: './src/pwa/FormField.jsx',
-        [FORM_FIELD_COMPONENTS.CARD]: './src/pwa/Card.jsx',
         [FORM_FIELD_COMPONENTS.READONLY_TABLE]: './src/pwa/ReadonlyTable.jsx',
     },
 }
