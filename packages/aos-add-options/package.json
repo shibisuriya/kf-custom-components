@@ -1,13 +1,13 @@
 {
-  "name": "array-of-strings",
+  "name": "aos-add-options",
   "version": "1.0.0",
   "description": "Custom form field for Kissflow's form",
   "main": "index.js",
   "scripts": {
     "dev": "form-field-scripts dev",
     "build": "form-field-scripts build",
-    "zip": "rm -rf ./custom-form-field.zip ./dist && npm run build && cd ./dist && zip -q -r ../custom-form-field.zip . && rm -rf ../dist",
-    "unzip": "rm -rf ./custom-form-field && unzip custom-form-field.zip -d ./custom-form-field"
+    "zip": "rm -rf ./aos-add-options.zip ./dist && npm run build && cd ./dist && zip -q -r ../aos-add-options.zip . && rm -rf ../dist",
+    "unzip": "rm -rf ./aos-add-options && unzip aos-add-options.zip -d ./aos-add-options"
   },
   "type": "module",
   "author": "",

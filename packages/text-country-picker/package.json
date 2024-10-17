@@ -1,13 +1,13 @@
 {
-  "name": "text",
+  "name": "text-country-picker",
   "version": "1.0.0",
   "description": "Custom form field for Kissflow's form",
   "main": "index.js",
   "scripts": {
     "dev": "form-field-scripts dev",
     "build": "form-field-scripts build && npm run zip",
-    "zip": "cd ./dist && zip -r ../custom-form-field.zip .",
-    "unzip": "rm -rf ./custom-form-field && unzip custom-form-field.zip -d ./custom-form-field"
+    "zip": "cd ./dist && zip -r ../text-country-picker.zip .",
+    "unzip": "rm -rf ./text-country-picker && unzip text-country-picker.zip -d ./text-country-picker"
   },
   "type": "module",
   "author": "",

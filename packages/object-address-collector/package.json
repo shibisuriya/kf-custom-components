@@ -1,13 +1,13 @@
 {
-  "name": "object",
+  "name": "object-address-collector",
   "version": "1.0.0",
   "description": "Custom form field for Kissflow's form",
   "main": "index.js",
   "scripts": {
     "dev": "form-field-scripts dev",
     "build": "form-field-scripts build",
-    "zip": "rm -rf ./custom-form-field.zip ./dist && npm run build && cd ./dist && zip -q -r ../custom-form-field.zip . && rm -rf ../dist",
-    "unzip": "rm -rf ./custom-form-field && unzip custom-form-field.zip -d ./custom-form-field"
+    "zip": "rm -rf ./object-address-collector.zip ./dist && npm run build && cd ./dist && zip -q -r ../object-address-collector.zip . && rm -rf ../dist",
+    "unzip": "rm -rf ./object-address-collector && unzip object-address-collector.zip -d ./object-address-collector"
   },
   "type": "module",
   "author": "",

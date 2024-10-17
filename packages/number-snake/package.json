@@ -1,13 +1,13 @@
 {
-  "name": "number",
+  "name": "number-snake",
   "version": "1.0.0",
   "description": "Custom form field for Kissflow's form",
   "main": "index.js",
   "scripts": {
     "dev": "form-field-scripts dev",
     "build": "form-field-scripts build",
-    "zip": "rm -rf ./custom-form-field.zip ./dist && npm run build && cd ./dist && zip -q -r ../custom-form-field.zip . && rm -rf ../dist",
-    "unzip": "rm -rf ./custom-form-field && unzip custom-form-field.zip -d ./custom-form-field"
+    "zip": "rm -rf ./number-snake.zip ./dist && npm run build && cd ./dist && zip -q -r ../number-snake.zip . && rm -rf ../dist",
+    "unzip": "rm -rf ./number-snake && unzip number-snake.zip -d ./number-snake"
   },
   "type": "module",
   "author": "",
