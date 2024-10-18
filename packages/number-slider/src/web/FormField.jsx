@@ -39,7 +39,7 @@ export default function KnobCanvasWidget(props) {
           type="range"
           min={0}
           max={1}
-          step={1 / (10 ** field?.decimalPoints ?? 3)}
+          step={1 / 10 ** (field?.decimalPoints ?? 3)}
           value={value}
           onChange={handleKnobDrag}
           disabled={readonly}
