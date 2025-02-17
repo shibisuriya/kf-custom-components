@@ -10,6 +10,7 @@ export default function KnobCanvasWidget(props) {
     errors, // Validation errors if any
     theme, // Theme for styling
     color, // Color for customization (optional)
+    parameters,
   } = props;
 
   // const [value, setvalue] = useState(value || field.defaultValue || 0);
@@ -37,8 +38,8 @@ export default function KnobCanvasWidget(props) {
       <div>
         <input
           type="range"
-          min={0}
-          max={1}
+          min={parameters?.min?.value ?? 0}
+          max={parameters?.max?.value ?? 100}
           step={1 / 10 ** (field?.decimalPoints ?? 3)}
           value={value}
           onChange={handleKnobDrag}
