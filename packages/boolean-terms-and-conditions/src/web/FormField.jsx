@@ -12,13 +12,10 @@ export default function TermsAndConditionsWidget(props) {
     color, // Color for customization (optional)
   } = props;
 
-  const [accepted, setAccepted] = useState(value || false); // Track acceptance of terms
   const { updateValue } = actions; // Update function passed from props
 
   const handleCheckboxChange = () => {
-    const newValue = !accepted;
-    setAccepted(newValue);
-    updateValue(newValue); // Update form value when checkbox is clicked
+    updateValue(!props.value)
   };
 
   return (
@@ -31,7 +28,7 @@ export default function TermsAndConditionsWidget(props) {
         <div>
           <input
             type="checkbox"
-            checked={accepted}
+            checked={props.value}
             onChange={handleCheckboxChange}
             disabled={disabled}
           />
@@ -48,7 +45,7 @@ export default function TermsAndConditionsWidget(props) {
           </label>
         </div>
       ) : (
-        <p>{accepted ? "Accepted" : "Not Accepted"}</p>
+        <p>{props.value ? "Accepted" : "Not Accepted"}</p>
       )}
       {errors && <p style={{ color: "red" }}>{errors}</p>}{" "}
       {/* Display validation errors */}
