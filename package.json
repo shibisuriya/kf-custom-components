@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "zip:form-fields": "pnpm -r --filter='./packages/*' run zip",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
