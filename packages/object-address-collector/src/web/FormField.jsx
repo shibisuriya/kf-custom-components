@@ -12,6 +12,9 @@ export default function AddressFieldWidget(props) {
         theme, // Theme for styling
         color, // Custom color for the field (optional)
     } = props
+    const text = props?.parameters?.text?.value ?? 10;
+    const num = props?.parameters?.num?.value ?? 10;
+    const DD = props?.parameters?.DD?.value ?? 10;
 
     const defaultAddress = {
         street: '',
@@ -19,6 +22,7 @@ export default function AddressFieldWidget(props) {
         state: '',
         postalCode: 0,
         country: '',
+        national: false,
     }
 
     const [address, setAddress] = useState(value || defaultAddress)
@@ -34,10 +38,19 @@ export default function AddressFieldWidget(props) {
         setAddress(updatedAddress)
         updateValue(updatedAddress) // Update form value
     }
-
+    console.log(address);
     if (!readonly) {
         return (
             <div className={styles.field}>
+                <h3>
+                    {field.name || "Address collector"}
+                    {field?.isRequired && <span style={{ color: "red" }}>*</span>}
+                </h3>
+                <h2>
+                    {text}
+                    {num}
+                    {DD}
+                </h2>
                 <div className={styles.formControls}>
                     <div className={styles.fieldTitle}>ADDRESS</div>
                     <div>
@@ -114,6 +127,20 @@ export default function AddressFieldWidget(props) {
                             }
                         />
                     </div>
+                    <div>
+                        <div>national: </div>
+                        <input
+                            type="checkbox"
+                            checked={address.national}
+                            onChange={(e) =>
+                                handleInputChange('national', e.target.checked)
+                            }
+                            disabled={disabled}
+                            placeholder={
+                                field.placeholder?.national || 'national'
+                            }
+                        />
+                    </div>
                 </div>
                 <div>{errors && <p style={{ color: 'red' }}>{errors}</p>}</div>
             </div>
@@ -146,6 +173,10 @@ export default function AddressFieldWidget(props) {
                 <div className={styles.formControlInReadOnlyMode}>
                     <div className={styles.key}>Country:</div>{' '}
                     <div className={styles.value}>{address.country}</div>
+                </div>
+                <div className={styles.formControlInReadOnlyMode}>
+                    <div className={styles.key}>national:</div>{' '}
+                    <div className={styles.value}>{String(address.national)}</div>
                 </div>
             </div>
             {errors && <div style={{ color: 'red' }}>{errors}</div>}
