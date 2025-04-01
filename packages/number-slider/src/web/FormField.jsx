@@ -19,7 +19,7 @@ export default function KnobCanvasWidget(props) {
 
   const handleKnobDrag = (event) => {
     const num = parseFloat(event.target.value);
-    const temp = Number(formatNumber(num, field?.decimalPoints ?? 3));
+    const temp = Number(formatNumber(num, parameters?.step?.value ?? 0));
     updateValue(temp);
   };
 
@@ -40,7 +40,7 @@ export default function KnobCanvasWidget(props) {
           type="range"
           min={parameters?.min?.value ?? 0}
           max={parameters?.max?.value ?? 100}
-          step={1 / 10 ** (field?.decimalPoints ?? 3)}
+          step={parameters?.step?.value ?? 1}
           value={value}
           onChange={handleKnobDrag}
           disabled={readonly}
