@@ -16,8 +16,11 @@
         },
         "country": {
             "type": "string"
+        },
+        "national": {
+            "type": "boolean"
         }
     },
-    "required": ["street", "city", "state", "postalCode", "country"],
+    "required": ["street", "city", "state", "postalCode", "country","national"],
     "additionalProperties": false
 }
