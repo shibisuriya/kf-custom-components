@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState, useRef } from 'react'
 
-import { BridgeContext } from './bridge/context.jsx'
+import { BridgeContext } from '../bridge/context.jsx'
 
 import styles from './FormField.css'
 

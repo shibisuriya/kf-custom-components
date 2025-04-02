@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { Bridge } from '../bridge/index.jsx'
 import { FormField } from './FormField.jsx'
 

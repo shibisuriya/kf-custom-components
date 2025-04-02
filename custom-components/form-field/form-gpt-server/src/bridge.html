@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      window.addEventListener("message", async (event) => {
+        const { question } = event.data;
+        fetch("/get-suggestions", {
+          method: "POST",
+          body: JSON.stringify({ question }),
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((res) => res.json())
+          .then((res) => {
+            const { reply } = res;
+            window.parent.postMessage({ reply }, "*");
+          });
+      });
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <h1>Bridge (I must be hidden!)</h1>
+  </body>
+</html>
