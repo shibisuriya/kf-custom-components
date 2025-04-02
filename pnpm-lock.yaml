@@ -314,6 +314,31 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
 
+  packages/custom-password-field:
+    dependencies:
+      helpers:
+        specifier: workspace:^
+        version: link:../helpers
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@kissflow/form-field-config':
+        specifier: workspace:^
+        version: link:../../lcnc-sdk-js/packages/form-field-config
+      '@kissflow/form-field-scripts':
+        specifier: workspace:^
+        version: link:../../lcnc-sdk-js/packages/form-field-scripts
+      unzipper:
+        specifier: ^0.10.14
+        version: 0.10.14
+      zip:
+        specifier: ^1.2.0
+        version: 1.2.0
+
   packages/helpers:
     dependencies:
       antd:
@@ -341,28 +366,6 @@ importers:
       rollup:
         specifier: ^3.18.0
         version: 3.29.5
-
-  packages/new-form-field:
-    dependencies:
-      react:
-        specifier: ^18.2.0
-        version: 18.3.1
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.3.1(react@18.3.1)
-    devDependencies:
-      '@kissflow/form-field-config':
-        specifier: workspace:^
-        version: link:../../lcnc-sdk-js/packages/form-field-config
-      '@kissflow/form-field-scripts':
-        specifier: workspace:^
-        version: link:../../lcnc-sdk-js/packages/form-field-scripts
-      unzipper:
-        specifier: ^0.10.14
-        version: 0.10.14
-      zip:
-        specifier: ^1.2.0
-        version: 1.2.0
 
   packages/no-web-card:
     dependencies:
