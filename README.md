@@ -39,8 +39,14 @@ For example,
 cd ./custom-components/form-field/text-texteditor
 ```
 
-Build the project and create a .zip file that can be uploaded to Kissflow,
+To build the custom component and create a .zip file that can be uploaded to Kissflow,
 
 ```bash
 pnpm run zip
+```
+
+To serve the custom component for development,
+
+```
+pnpm run dev
 ```
