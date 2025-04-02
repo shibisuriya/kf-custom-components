@@ -1,5 +1,5 @@
 packages:
   - 'lcnc-sdk-js/packages/*'
-  - 'packages/*'
-  - 'page-custom-component/*'
+  - 'custom-components/page/*'
+  - 'custom-components/form-field/*'
 
