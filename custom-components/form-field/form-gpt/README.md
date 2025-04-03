@@ -1,6 +1,15 @@
-# file-picker
+# AutoFillGPT
 
-This is a Kissflow's custom form field project, scaffolded using `@kissflow/create-kf-component`.
+A form field that takes a prompt as input and fills the form by understanding the prompt and the form's structure!
+
+Note: This custom form field has a server component, the form field sends the prompt & the form's information to the server,
+the server then uses a LLM to generate values for all the fields present in the form by understanding the prompt.
+
+Note: This field is a wip.
+
+## The server
+
+As mentioned above this form field has a server component, the source code for which is located at `custom-components/form-field/form-gpt-server`.
 
 ### To install dependencies,
 

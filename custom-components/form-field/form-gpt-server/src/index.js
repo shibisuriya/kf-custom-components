@@ -15,7 +15,13 @@ app.get("/", (req, res) => {
 });
 
 app.post("/get-suggestions", async (req, res) => {
-  const { question } = req.body;
+  const { prompt, fields } = req.body;
+
+  console.log(prompt);
+  console.log(fields);
+
+  // res.json({ reply: question });
+  // return
 
   const ai = new GoogleGenAI({
     apiKey: process.env.GEMINI_API_KEY,
@@ -23,10 +29,24 @@ app.post("/get-suggestions", async (req, res) => {
 
   const response = await ai.models.generateContent({
     model: "gemini-2.0-flash",
-    contents: question,
+    contents: `
+    There are html inputs, 
+    ${JSON.stringify(fields)};
+    a json with key as field id and value
+    as the field's type..
+    this is the context '${prompt}'...
+    Can you understand the context and the fields json
+    and generate a {'field': 'value of the field that you can get from the above context'}
+    Don't explain, only give a json.
+    `,
   });
 
-  res.json({ reply: response.text });
+  const newResp = response.text.replace(/```json|```/g, "").trim();
+  console.log("newResp => ", newResp);
+
+  const values = JSON.parse(newResp);
+
+  res.json({ reply: values });
 });
 
 const PORT = process.env.PORT || 8080;

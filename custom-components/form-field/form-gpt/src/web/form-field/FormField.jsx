@@ -12,11 +12,40 @@ export function FormField(props) {
 
     const questionRef = useRef()
 
+    const getFieldElements = () => {
+        // eslint-disable-next-line no-restricted-globals
+        const fieldElements = document.querySelectorAll(
+            '.col[data-valid][data-fieldtype]'
+        )
+
+        const inputs = Array.from(fieldElements)
+            .map((el) => el.querySelector('input'))
+            .filter((input) => input !== null)
+            .reduce((acc, input) => {
+                acc[input.id] = input
+                return acc
+            }, {})
+
+        return inputs
+    }
+
     useEffect(() => {
         const handleKeyDown = (event) => {
             if (event.key === 'Enter') {
                 event.preventDefault()
-                iframeRef.current?.contentWindow?.postMessage({ question }, '*')
+
+                const fields = Object.entries(getFieldElements()).reduce(
+                    (acc, [key, value]) => {
+                        acc[key] = value.type
+                        return acc
+                    },
+                    {}
+                )
+
+                iframeRef.current?.contentWindow?.postMessage(
+                    { fields: fields, prompt: question },
+                    '*'
+                )
             }
         }
 
@@ -27,6 +56,52 @@ export function FormField(props) {
         }
     }, [question])
 
+    async function typeText(input, text, delay = 100) {
+        const delayFunc = () =>
+            new Promise((resolve) => setTimeout(resolve, delay))
+
+        // Erase existing text using Backspace key events
+        for (let i = 0; i < input.value.length; i++) {
+            input.dispatchEvent(
+                new KeyboardEvent('keydown', {
+                    key: 'Backspace',
+                    bubbles: true,
+                })
+            )
+            input.dispatchEvent(
+                new KeyboardEvent('keyup', { key: 'Backspace', bubbles: true })
+            )
+            input.dispatchEvent(
+                new InputEvent('input', {
+                    bubbles: true,
+                    inputType: 'deleteContentBackward',
+                })
+            )
+            await delayFunc()
+        }
+
+        // Type new text using key events
+        for (const char of text) {
+            input.dispatchEvent(
+                new KeyboardEvent('keydown', { key: char, bubbles: true })
+            )
+            input.dispatchEvent(
+                new KeyboardEvent('keypress', { key: char, bubbles: true })
+            )
+            input.dispatchEvent(
+                new KeyboardEvent('keyup', { key: char, bubbles: true })
+            )
+            input.dispatchEvent(
+                new InputEvent('input', {
+                    bubbles: true,
+                    inputType: 'insertText',
+                    data: char,
+                })
+            )
+            await delayFunc()
+        }
+    }
+
     useEffect(() => {
         const handleMessage = (event) => {
             const messageOrigin =
@@ -34,7 +109,15 @@ export function FormField(props) {
             if (event.origin !== messageOrigin) return
 
             const { reply } = event.data
-            setAnswer(reply)
+            if (typeof reply === 'object') {
+                setAnswer(JSON.stringify(reply))
+                const fieldElements = getFieldElements()
+                Object.entries(reply).forEach(([key, value]) => {
+                    typeText(fieldElements[key], value, 100)
+                })
+            } else {
+                setAnswer(reply)
+            }
         }
 
         // eslint-disable-next-line no-restricted-globals

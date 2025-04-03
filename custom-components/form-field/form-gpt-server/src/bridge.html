@@ -3,10 +3,10 @@
   <head>
     <script>
       window.addEventListener("message", async (event) => {
-        const { question } = event.data;
+        const { prompt, fields } = event.data;
         fetch("/get-suggestions", {
           method: "POST",
-          body: JSON.stringify({ question }),
+          body: JSON.stringify({ prompt, fields }),
           headers: { "Content-Type": "application/json" },
         })
           .then((res) => res.json())
