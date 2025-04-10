@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "form-field-scripts dev",
     "build": "form-field-scripts build",
-    "zip": "rm -rf ./all.zip ./dist && npm run build && cd ./dist && zip -q -r ../all.zip . && rm -rf ../dist",
+    "zip": "form-field-scripts zip",
     "unzip": "rm -rf ./all && unzip all.zip -d ./all"
   },
   "type": "module",
