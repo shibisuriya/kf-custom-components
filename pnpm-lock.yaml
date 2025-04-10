@@ -133,6 +133,40 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
 
+  custom-components/form-field/auto-fill-gpt:
+    dependencies:
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@kissflow/form-field-config':
+        specifier: workspace:^
+        version: link:../../../lcnc-sdk-js/packages/form-field-config
+      '@kissflow/form-field-scripts':
+        specifier: workspace:^
+        version: link:../../../lcnc-sdk-js/packages/form-field-scripts
+      unzipper:
+        specifier: ^0.10.14
+        version: 0.10.14
+      zip:
+        specifier: ^1.2.0
+        version: 1.2.0
+
+  custom-components/form-field/auto-fill-gpt-server:
+    dependencies:
+      '@google/genai':
+        specifier: ^0.7.0
+        version: 0.7.0
+      dotenv:
+        specifier: ^16.4.7
+        version: 16.4.7
+      express:
+        specifier: ^4.21.2
+        version: 4.21.2
+
   custom-components/form-field/boolean:
     dependencies:
       helpers:
@@ -181,65 +215,6 @@ importers:
         version: 1.2.0
 
   custom-components/form-field/box-file-picker:
-    dependencies:
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-    devDependencies:
-      '@kissflow/form-field-config':
-        specifier: workspace:^
-        version: link:../../../lcnc-sdk-js/packages/form-field-config
-      '@kissflow/form-field-scripts':
-        specifier: workspace:^
-        version: link:../../../lcnc-sdk-js/packages/form-field-scripts
-      unzipper:
-        specifier: ^0.10.14
-        version: 0.10.14
-      zip:
-        specifier: ^1.2.0
-        version: 1.2.0
-
-  custom-components/form-field/dummy-server:
-    dependencies:
-      '@google/genai':
-        specifier: ^0.7.0
-        version: 0.7.0
-      dotenv:
-        specifier: ^16.4.7
-        version: 16.4.7
-      express:
-        specifier: ^4.21.2
-        version: 4.21.2
-
-  custom-components/form-field/file-picker:
-    dependencies:
-      '@google/genai':
-        specifier: ^0.7.0
-        version: 0.7.0
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-    devDependencies:
-      '@kissflow/form-field-config':
-        specifier: workspace:^
-        version: link:../../../lcnc-sdk-js/packages/form-field-config
-      '@kissflow/form-field-scripts':
-        specifier: workspace:^
-        version: link:../../../lcnc-sdk-js/packages/form-field-scripts
-      unzipper:
-        specifier: ^0.10.14
-        version: 0.10.14
-      zip:
-        specifier: ^1.2.0
-        version: 1.2.0
-
-  custom-components/form-field/form-gpt:
     dependencies:
       react:
         specifier: ^18.2.0
