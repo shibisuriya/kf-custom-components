@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function FormField(props) {
-    const { value, actions } = props;
+    const { value, actions, readonly } = props;
     const { updateValue } = actions;
 
     // List of country codes (can be expanded)
@@ -63,6 +63,7 @@ function FormField(props) {
                 value={countryCode}
                 onChange={handleCountryCodeChange}
                 style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
+                disabled={readonly}
             >
             {countryCodes.map(({ code, label }) => (
             <option key={code} value={code}>
@@ -78,6 +79,7 @@ function FormField(props) {
                 placeholder="Enter a phone number"
                 onChange={handleInputChange}
                 style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', flex: 1 }}
+                disabled={readonly}
             />
 
             {/* Call Link */}
