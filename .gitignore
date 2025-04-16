@@ -131,6 +131,4 @@ dist
 
 
 .pnpm-store/
-custom-components/form-field/phonenumberfield/src/.DS_Store
-custom-components/form-field/phonenumberfield/src/web/FormField.jsx
 .DS_Store
